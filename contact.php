@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Wenn keine Fehler, E-Mail senden
     if (empty($errors)) {
-        $to = "ai@bergglanz.de";
+        $to = "buy@bundesbaer.store";
         $subject = "BundesBär Anfrage von " . htmlspecialchars($name);
         $body = "Name: " . htmlspecialchars($name) . "\n";
         $body .= "E-Mail: " . htmlspecialchars($email) . "\n\n";
