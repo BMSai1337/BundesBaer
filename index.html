@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BundesBär – Geräuschlos. Taktisch. Bereit.</title>
+<meta name="description" content="BundesBär: Das Gummibärchenpaket mit geräuschlosem Öffnen für militärische Einsätze, Prepper und Outdoor-Profis.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">BundesBär</a>
+    <button id="navToggle" aria-label="Navigation">&#9776;</button>
+  </div>
+</header>
+
+<nav id="mainNav">
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#features">Funktionen</a></li>
+    <li><a href="#specs">Spezifikationen</a></li>
+    <li><a href="#about">Über BundesBär</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</nav>
+
+<section id="hero" class="hero">
+  <div class="container hero-content">
+    <h1>BundesBär</h1>
+    <p class="tagline">Geräuschlos öffnen. Taktisch konzipiert.</p>
+    <img src="images/placeholder-1.svg" alt="BundesBär Packung – Olgrün, taktisches Design, geräuschloses Verschluss-System" class="hero-img">
+    <a href="#features" class="btn">Mehr erfahren</a>
+  </div>
+</section>
+
+<section id="features" class="features">
+  <div class="container">
+    <h2>Warum BundesBär?</h2>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <img src="images/placeholder-2.svg" alt="Geräuschloser Zipper" class="feature-img">
+        <h3>Silent Opening</h3>
+        <p>Patentierter Zipper ohne Klappern – ideal für Patrouillen und Nachtsicht-Einsätze.</p>
+      </article>
+      <article class="feature-card">
+        <img src="images/placeholder-3.svg" alt="200g Packung" class="feature-img">
+        <h3>200g Portion</h3>
+        <p>Perfekt portioniert für Einzelsoldaten, Field Rations oder mehrtägige Einsätze.</p>
+      </article>
+      <article class="feature-card">
+        <img src="images/placeholder-4.svg" alt="Olivgrüne Taktik-Packung" class="feature-img">
+        <h3>Olivgrüner Tarn-Look</h3>
+        <p>Taktische Farbgebung, hoher Kontrast durch schwarze Schrift – lesbar bei Dämmerung.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="specs" class="specs">
+  <div class="container">
+    <h2>Spezifikationen</h2>
+    <ul class="spec-list">
+      <li><strong>Gewicht:</strong> 200g</li>
+      <li><strong>Farbe:</strong> Olivgrün, matte Tarnbeschichtung</li>
+      <li><strong>Verschluss:</strong> Geräuschloser Reißverschluss (Silent Zipper)</li>
+      <li><strong>Beschichtung:</strong> Tear-resistant, rescelable</li>
+      <li><strong>Buchstaben:</strong> Hochkontrast Schwarz, gut lesbar</li>
+      <li><strong>Material:</strong> Militärtaugliches Polyethylen</li>
+    </ul>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <h2>Über BundesBär</h2>
+    <p>BundesBär ist entwickelt für den Einsatz in taktischen und militärischen Bereichen. Die geräuschlose Öffnung reduziert die Akustikspur auf ein Minimum – kritisch für verdeckte Operationen. Die olivgrüne Verpackung mit schwarzer Schrift ist so konzipiert, dass sie sowohl im Zivilbereich als auch im Feld unauffällig bleibt und trotz sofort lesbar ist.</p>
+    <p>Entwickelt von <strong>BMSfood GmbH</strong> – für Profis, die sich auf Funktionalität verlassen.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Anfrage</h2>
+    <form action="contact.php" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Ihr Name">
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
+
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" required rows="5" placeholder="Ihre Anfrage..."></textarea>
+
+      <button type="submit" class="btn">Absenden</button>
+    </form>
+    <p id="formSuccess" style="display:none; color:#4caf50; margin-top:1em;">Vielen Dank! Ihre Nachricht wurde gesendet.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 BMSfood GmbH &bull; <a href="impressum.html">Impressum</a> &bull; <a href="datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var hash = window.location.hash;
+    if (hash.includes('sent=1')) {
+      var successEl = document.getElementById('formSuccess');
+      if (successEl) {
+        successEl.style.display = 'block';
+      }
+      history.replaceState('', document.title, window.location.pathname);
+    }
+    var navToggle = document.getElementById('navToggle');
+    var mainNav = document.getElementById('mainNav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+      });
+    }
+  })();
+</script>
+</body>
+</html>

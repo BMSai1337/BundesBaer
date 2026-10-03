@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#0A0A0A"/>
+  <rect x="120" y="80" width="160" height="160" rx="8" fill="#556B2F" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M120,100 Q180,130 240,100 Q300,130 340,100" stroke="#FFD700" stroke-width="4" fill="none" opacity="0.8"/>
+  <circle cx="180" cy="140" r="4" fill="#FFFFFF"/>
+  <circle cx="220" cy="140" r="4" fill="#FFFFFF"/>
+  <text x="200" y="260" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="sans-serif">Geräuschloser Zipper</text>
+  <text x="200" y="280" text-anchor="middle" fill="#CCCCCC" font-size="12" font-family="sans-serif">Silent Opening</text>
+</svg>
