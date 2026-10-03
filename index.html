@@ -29,8 +29,16 @@
   <div class="container hero-content">
     <h1>BundesBär</h1>
     <p class="tagline">Geräuschlos öffnen. Taktisch konzipiert.</p>
-    <img src="images/placeholder-1.svg" alt="BundesBär Packung – Olgrün, taktisches Design, geräuschloses Verschluss-System" class="hero-img">
-    <a href="#features" class="btn">Mehr erfahren</a>
+    <button type="button" class="hero-figure" id="heroFigure" aria-label="Produktbild vergrößern">
+      <picture>
+        <source srcset="images/BundesBaer.webp" type="image/webp">
+        <img src="images/BundesBaer.jpg" alt="BundesBär Packung – Olgrün, taktisches Design, geräuschloses Verschluss-System" class="hero-img" width="600" height="600">
+      </picture>
+      <span class="zoom-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" focusable="false" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm5.6.4 1.4-1.4 4.2 4.2-1.4 1.4-4.2-4.2z" fill="currentColor"/></svg>
+        Klick zum Vergrößern
+      </span>
+    </button>
   </div>
 </section>
 
@@ -104,6 +112,11 @@
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Produktbild in Großansicht" hidden>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Ansicht schließen">&times;</button>
+  <img src="images/BundesBaer.webp" alt="BundesBär Packung – Großansicht" id="lightboxImg" width="1000" height="1000">
+</div>
+
 <script>
   (function() {
     var hash = window.location.hash;
@@ -119,6 +132,49 @@
     if (navToggle && mainNav) {
       navToggle.addEventListener('click', function() {
         mainNav.classList.toggle('active');
+      });
+    }
+    var heroFigure = document.getElementById('heroFigure');
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxClose = document.getElementById('lightboxClose');
+    var lastFocused = null;
+
+    function openLightbox() {
+      lastFocused = document.activeElement;
+      lightboxImg.src = heroFigure.querySelector('img').currentSrc || heroFigure.querySelector('img').src;
+      lightbox.hidden = false;
+      document.body.classList.add('no-scroll');
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.classList.remove('no-scroll');
+      if (lastFocused) {
+        lastFocused.focus();
+      }
+    }
+
+    if (heroFigure && lightbox) {
+      heroFigure.addEventListener('click', openLightbox);
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+      document.addEventListener('keydown', function(event) {
+        if (lightbox.hidden) {
+          return;
+        }
+        if (event.key === 'Escape' || event.key === 'Esc') {
+          closeLightbox();
+        }
+        if (event.key === 'Tab') {
+          event.preventDefault();
+          lightboxClose.focus();
+        }
       });
     }
   })();

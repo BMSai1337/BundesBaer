@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-  <rect width="400" height="300" fill="#0A0A0A"/>
-  <rect x="100" y="50" width="200" height="200" rx="10" fill="#556B2F" stroke="#FFFFFF" stroke-width="2"/>
-  <path d="M150,100 L250,100" stroke="#FFFFFF" stroke-width="3"/>
-  <path d="M150,150 L250,150" stroke="#FFFFFF" stroke-width="3"/>
-  <path d="M150,200 L250,200" stroke="#FFFFFF" stroke-width="3"/>
-  <text x="200" y="280" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="sans-serif">BundesBär Packung</text>
-</svg>
